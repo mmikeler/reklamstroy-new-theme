@@ -14,6 +14,10 @@
     font-weight: normal;
 }
 
+*:not(.no-transition) {
+    transition: all 0.3s ease-out;
+}
+
 .fs {
     width: 100vw;
     height: 100vh;
@@ -183,6 +187,81 @@
     left: 212px;
 }
 
+/*================================ S3 */
+.s3 {
+    min-height: 900px;
+    padding: 80px 0;
+}
+
+.s3 .bo-title {
+    font-size: 2.5rem;
+    text-align: center;
+    font-family: Circe-Bold;
+    margin-bottom: 60px;
+}
+
+.s3 .bo-title span {
+    font-family: Circe;
+    color: #e6ae48;
+    display: block;
+}
+
+.s3__item {
+    margin-bottom: 3rem;
+}
+
+.s3__item .img {
+    width: 260px;
+    height: 260px;
+    background-color: #ccc;
+    margin: auto;
+}
+
+.s3__item .title {
+    margin: 15px 0;
+    font-family: Circe-Bold;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.s3__item .title span {
+    font-family: Circe;
+}
+
+.s3 .neon-btn--dark {
+    margin: 80px auto;
+    display: block;
+    width: fit-content;
+}
+
+/* ==================== S4 */
+.s4 {
+    background-color: #1c2452;
+    padding: 50px 0;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.s4 .bo-title {
+    font-size: 35px;
+    font-family: Circe-Bold;
+    margin-bottom: 30px;
+}
+
+.s4 p {
+    font-size: 24px;
+    margin: 15px;
+}
+
+.porto-img-wrapper {
+    padding-top: 75%;
+    background-size: cover;
+    background-position: center;
+}
+
 /*================================ UTILITES */
 body {
     padding: 0;
@@ -233,7 +312,70 @@ section>.container {
     font-family: Circe-Bold;
 }
 
+/* ======================== FAQ */
+.faq {
+    padding: 80px 0;
+}
 
+.faq .item {
+    border-bottom: 1px solid #ddd;
+}
+
+#faq .header {
+    font-size: 1.5rem;
+    position: relative;
+    padding: 15px 0;
+    cursor: pointer;
+}
+
+#faq .header:after {
+    content: '+';
+    position: absolute;
+    right: 10px;
+    top: 13px;
+    width: 40px;
+    height: 40px;
+    background-color: #f3f3f3;
+    font-size: 3.5rem;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 48px;
+    transition: all 0.3s;
+    color: #ccc;
+}
+
+#faq .header:hover:after {
+    background-color: #e6ae48;
+    color: #777;
+}
+
+#faq .content {
+    padding: 15px;
+    display: none;
+}
+
+#faq .item.open .header:after {
+    transform: rotate(45deg);
+}
+
+/* ========================== s6 */
+.s6 {
+    padding: 80px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    min-height: 900px;
+}
+
+.s6 .bo-title {
+    font-size: 36px;
+    font-family: Circe-Bold;
+}
+
+.s6 p {
+    margin-bottom: 80px;
+}
 
 /*========================= animation */
 .animate-text {
@@ -268,7 +410,8 @@ section>.container {
 }
 
 /*================================= NEON BTN */
-.neon-btn {
+.neon-btn,
+.neon-btn--dark {
     position: relative;
     display: inline-block;
     padding: 15px 30px;
@@ -280,9 +423,11 @@ section>.container {
     overflow: hidden;
     border: 1px solid;
     transition: 0.2s;
+    text-align: center;
 }
 
-.neon-btn:hover {
+.neon-btn:hover,
+.neon-btn--dark:hover {
     color: #fff;
     background: #e6ae48;
     box-shadow: 0 0 10px #e6ae48,
@@ -292,12 +437,14 @@ section>.container {
     text-decoration: none;
 }
 
-.neon-btn span {
+.neon-btn span,
+.neon-btn--dark span {
     position: absolute;
     display: block;
 }
 
-.neon-btn span:nth-child(1) {
+.neon-btn span:nth-child(1),
+.neon-btn--dark span:nth-child(1) {
     top: 0;
     left: -100%;
     width: 100%;
@@ -305,12 +452,14 @@ section>.container {
     background: linear-gradient(90deg, transparent, #fff);
 }
 
-.neon-btn:hover span:nth-child(1) {
+.neon-btn:hover span:nth-child(1),
+.neon-btn--dark:hover span:nth-child(1) {
     left: 100%;
     transition: 1s;
 }
 
-.neon-btn span:nth-child(3) {
+.neon-btn span:nth-child(3),
+.neon-btn--dark span:nth-child(3) {
     bottom: 0;
     right: -100%;
     width: 100%;
@@ -318,13 +467,15 @@ section>.container {
     background: linear-gradient(270deg, transparent, #fff);
 }
 
-.neon-btn:hover span:nth-child(3) {
+.neon-btn:hover span:nth-child(3),
+.neon-btn--dark:hover span:nth-child(3) {
     right: 100%;
     transition: 1s;
     transition-delay: 0.5s;
 }
 
-.neon-btn span:nth-child(2) {
+.neon-btn span:nth-child(2),
+.neon-btn--dark span:nth-child(2) {
     top: -100%;
     right: 0;
     width: 2px;
@@ -332,13 +483,15 @@ section>.container {
     background: linear-gradient(180deg, transparent, #fff);
 }
 
-.neon-btn:hover span:nth-child(2) {
+.neon-btn:hover span:nth-child(2),
+.neon-btn--dark:hover span:nth-child(2) {
     top: 100%;
     transition: 1s;
     transition-delay: 0.25s;
 }
 
-.neon-btn span:nth-child(4) {
+.neon-btn span:nth-child(4),
+.neon-btn--dark span:nth-child(4) {
     bottom: -100%;
     left: 0;
     width: 2px;
@@ -346,16 +499,49 @@ section>.container {
     background: linear-gradient(360deg, transparent, #fff);
 }
 
-.neon-btn:hover span:nth-child(4) {
+.neon-btn:hover span:nth-child(4),
+.neon-btn--dark:hover span:nth-child(4) {
     bottom: 100%;
     transition: 1s;
     transition-delay: 0.75s;
 }
 
+.neon-btn--dark:hover {
+    background-color: #e6ae48;
+    transition-delay: 0s;
+}
+
 /* ===================================
             RESPONSE
 ======================================*/
+@media screen and (max-width: 768px) {
+    .fs__bottom-bar>.container-fluid>.row>.col-12 {
+        order: 2;
+    }
+
+    .fs__bottom-bar>.container-fluid>.row>.col-12:nth-child(3) {
+        order: 3;
+    }
+
+    .fs__bottom-bar {
+        position: inherit;
+    }
+
+    .fs__bottom-bar-item {
+        margin: 30px 0;
+    }
+
+    .filter {
+        height: auto;
+        flex-direction: column;
+    }
+}
+
 @media screen and (max-width: 540px) {
+    section {
+        height: auto !important;
+    }
+
     .fs {
         padding-top: 50px;
         height: auto;
@@ -364,10 +550,6 @@ section>.container {
     .front {
         display: flex;
         flex-direction: column;
-    }
-
-    .filter {
-        height: auto;
     }
 
     .fs__bottom-bar {
