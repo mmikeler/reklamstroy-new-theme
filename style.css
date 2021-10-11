@@ -14,10 +14,6 @@
     font-weight: normal;
 }
 
-*:not(.no-transition) {
-    transition: all 0.3s ease-out;
-}
-
 .fs {
     width: 100vw;
     height: 100vh;
@@ -237,12 +233,13 @@
 /* ==================== S4 */
 .s4 {
     background-color: #1c2452;
-    padding: 50px 0;
+    padding: 50px 0 0 0;
     text-align: center;
     color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
+    min-height: auto;
 }
 
 .s4 .bo-title {
@@ -326,25 +323,24 @@ section>.container {
     position: relative;
     padding: 15px 0;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-#faq .header:after {
-    content: '+';
-    position: absolute;
-    right: 10px;
-    top: 13px;
+#faq .header i {
     width: 40px;
     height: 40px;
     background-color: #f3f3f3;
-    font-size: 3.5rem;
+    font-size: 1.6rem;
     border-radius: 50%;
     text-align: center;
-    line-height: 48px;
+    line-height: 41px;
     transition: all 0.3s;
     color: #ccc;
 }
 
-#faq .header:hover:after {
+#faq .header:hover i {
     background-color: #e6ae48;
     color: #777;
 }
@@ -354,7 +350,7 @@ section>.container {
     display: none;
 }
 
-#faq .item.open .header:after {
+#faq .item.open .header i {
     transform: rotate(45deg);
 }
 
@@ -375,6 +371,101 @@ section>.container {
 
 .s6 p {
     margin-bottom: 80px;
+}
+
+/* ============================ S7 */
+.s7 {
+    background-color: #1c2452;
+    color: #fff;
+    padding: 80px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: auto;
+}
+
+.s7 .bo-title {
+    font-size: 36px;
+    font-family: Circe-Bold;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.s7-notice {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 60px;
+    display: block;
+}
+
+.s7-caption {
+    font-size: 1.8rem;
+    margin: 30px 0;
+}
+
+/* ============================ S8 */
+.s8 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+.s8-2 p:nth-child(1) {
+    font-size: 2rem;
+    font-family: Circe-Bold;
+    text-transform: uppercase;
+}
+
+.s8-2 p:nth-child(2) {
+    font-size: 1.5rem;
+}
+
+.s8-2 p:nth-child(3) {
+    font-size: 2.5rem;
+}
+
+.insta-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.insta {
+    width: 300px;
+    height: 650px;
+    position: relative;
+    background: url('./img/iphone-mockup.png') no-repeat center / contain;
+}
+
+.insta .frame {
+    position: absolute;
+    top: 60px;
+    left: 10px;
+    right: 7px;
+    bottom: 60px;
+    background-color: coral;
+    z-index: -1;
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.social a {
+    padding: 15px;
+    font-size: 45px;
+    color: #1c2452;
+    transition: all 0.3s;
+    opacity: 0.5;
+}
+
+.social a:hover {
+    color: #e6ae48;
+    opacity: 1;
 }
 
 /*========================= animation */
@@ -424,6 +515,7 @@ section>.container {
     border: 1px solid;
     transition: 0.2s;
     text-align: center;
+    cursor: pointer;
 }
 
 .neon-btn:hover,
@@ -542,6 +634,10 @@ section>.container {
         height: auto !important;
     }
 
+    .s3 .bo-title {
+        font-size: 2rem;
+    }
+
     .fs {
         padding-top: 50px;
         height: auto;
@@ -590,5 +686,9 @@ section>.container {
     .point:nth-child(4) {
         top: 50px;
         left: 177px;
+    }
+
+    .social {
+        flex-direction: row;
     }
 }
